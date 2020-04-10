@@ -81,6 +81,8 @@ public:
     void set_time_unknown_pps(const ::uhd::time_spec_t& time_spec);
     void set_command_time(const ::uhd::time_spec_t& time_spec, size_t mboard);
     void set_user_register(const uint8_t addr, const uint32_t data, size_t mboard);
+    void set_user_register1(const uint32_t data, size_t mboard);
+    void set_user_register2(const uint32_t data, size_t mboard);
     void clear_command_time(size_t mboard);
     void set_gpio_attr(const std::string& bank,
                        const std::string& attr,

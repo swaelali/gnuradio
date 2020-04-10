@@ -480,6 +480,14 @@ public:
     virtual void
     set_user_register(const uint8_t addr, const uint32_t data, size_t mboard = 0) = 0;
 
+
+    virtual void
+    set_user_register1(const uint32_t data, size_t mboard = 0) = 0;
+
+    virtual void
+    set_user_register2(const uint32_t data, size_t mboard = 0) = 0;
+
+
     /*!
      * Set the clock configuration.
      *

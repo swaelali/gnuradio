@@ -487,6 +487,31 @@ void usrp_block_impl::set_user_register(const uint8_t addr,
 #endif
 }
 
+
+// added to implement custom user registers 
+void
+usrp_block_impl::set_user_register1(const uint32_t data,
+                                    size_t mboard)
+{
+#ifdef UHD_USRP_MULTI_USRP_USER_REGS_API
+  _dev->set_user_register1(data, mboard);
+#else
+  throw std::runtime_error("not implemented in this version");
+#endif
+}
+
+void
+usrp_block_impl::set_user_register2(const uint32_t data,
+                                    size_t mboard)
+{
+#ifdef UHD_USRP_MULTI_USRP_USER_REGS_API
+  _dev->set_user_register2(data, mboard);
+#else
+  throw std::runtime_error("not implemented in this version");
+#endif
+}
+
+
 void usrp_block_impl::set_gpio_attr(const std::string& bank,
                                     const std::string& attr,
                                     const boost::uint32_t value,
